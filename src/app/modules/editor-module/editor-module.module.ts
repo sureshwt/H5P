@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GenericEditorComponent } from './generic-editor/generic-editor.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ContentTypesService } from './services/content-types.service';
-
+import { ContentTypesService } from '../../providers/services/content-types.service';
 
 @NgModule({
   imports: [

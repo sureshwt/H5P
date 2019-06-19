@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ContentTypesService } from '../services/content-types.service';
+import { ContentTypesService } from '../../../providers/services/content-types.service';
 @Component({
   selector: 'app-generic-editor',
   templateUrl: './generic-editor.component.html',
