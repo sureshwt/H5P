@@ -1,0 +1,110 @@
+.h5p-confirmation-dialog-background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(44, 44, 44, 0.9);
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: opacity 0.1s, linear 0s, visibility 0s linear 0s;
+    transition: opacity 0.1s linear 0s, visibility 0s linear 0s;
+    z-index: 201;
+
+    .h5p-confirmation-dialog-popup {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-sizing: border-box;
+        max-width: 35em;
+        min-width: 25em;
+        top: 2em;
+        left: 50%;
+        -webkit-transform: translate(-50%, 0%);
+        -ms-transform: translate(-50%, 0%);
+        transform: translate(-50%, 0%);
+        color: #555;
+        box-shadow: 0 0 6px 6px rgba(10, 10, 10, 0.3);
+        -webkit-transition: transform 0.1s ease-in;
+        transition: transform 0.1s ease-in;
+    }
+
+    .h5p-confirmation-dialog-header {
+        padding: 1.5em;
+        background: #fff;
+        color: #356593;
+
+        .h5p-confirmation-dialog-header-text {
+            font-size: 1.25em;
+        }
+    }
+
+    .h5p-confirmation-dialog-body {
+        background: #fafbfc;
+        border-top: solid 1px #dde0e9;
+        padding: 1.25em 1.5em;
+
+        .h5p-confirmation-dialog-text {
+            margin-bottom: 1.5em;
+        }
+
+        .h5p-confirmation-dialog-buttons {
+            float: right;
+        }
+
+        .h5p-core-cancel-button {
+            border: none;
+            background: none;
+            color: #a00;
+            margin-right: 1em;
+            font-size: 1em;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        button.h5p-core-button {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 600;
+            font-size: 1em;
+            line-height: 1.2;
+            padding: 0.5em 1.25em;
+            border-radius: 2em;
+            background: #2579c6;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+            box-shadow: none;
+            outline: none;
+            display: inline-block;
+            text-align: center;
+            text-shadow: none;
+            vertical-align: baseline;
+            text-decoration: none;
+            -webkit-transition: initial;
+            transition: initial;
+        }
+
+        .h5p-confirmation-dialog-confirm-button {
+            padding-left: 0.75em;
+            margin-bottom: 0;
+        }
+
+    }
+    .h5p-confirmation-dialog-exit{
+    position: absolute;
+    background: none;
+    border: none;
+    font-size: 2.5em;
+    top: -0.9em;
+    right: -1.15em;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 1px 6px;
+    }
+    .h5p-confirmation-dialog-text :before{
+        //font-family: "H5P";
+        content: "\e890";
+    }
+}

@@ -1,0 +1,23 @@
+<fieldset class="behavioural-block">
+  <div class="title" *ngFor="let bData of beheviouralData">
+    <div class="title" title="Expand/Collapse" role="button" tabindex="0">
+      {{bData.label}}
+    </div>
+    <div class="content">
+    <div *ngFor="let field of bData?.fields">
+      <div class="field field-name-enableRetry {{field.boolean}} importance-{{field.importance}}">
+        <label class="h5peditor-label">
+          <input type="checkbox" [checked]="field.default">{{field.label}}</label>
+        <div class="h5peditor-field-description" *ngIf="field.description">{{field.description}}</div>
+        <label>{{field.label}}</label>
+        <select *ngIf="field.type == 'select' ">
+          <option>-</option>
+          <option *ngFor="let type of field?.options" [value]="type.value" selected="type.label">{{type.label}}</option>
+        </select>
+        <input type="{{field.type}}" class="input-num" value="{{field.default}}" *ngIf="field.type == 'number'"/>
+        <div class="h5p-errors"></div>
+      </div>
+    </div>
+    </div>
+  </div>
+</fieldset>

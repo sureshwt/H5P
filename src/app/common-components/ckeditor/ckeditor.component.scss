@@ -1,0 +1,32 @@
+.ckeditor{
+    .ckeditor-label{
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #454347;
+    font-family: "Open Sans",sans-serif;
+    display: flex;
+    flex-direction: row;
+    }
+    .ckeditor-required ::after{
+        content: "*";
+        color: #da0001;
+        margin-left: 0.2em;
+        position: relative;
+        font-size: 16px;
+    }
+ 
+    .ckeditor-field{
+    box-shadow: inset 0px 0px 5px rgba(0,0,0,0.12);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 10px;
+    min-height: 40px;
+    border: 1px solid #d0d0d1;
+    background: #fff;
+    outline: none;
+    font-size: 16px;
+    word-wrap: break-word; 
+    width: 910px;
+    }
+}
