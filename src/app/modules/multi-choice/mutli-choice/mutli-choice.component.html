@@ -1,118 +1,85 @@
 <div class="multipleChoice-form">
     <app-title></app-title>
-    <div class="field" *ngFor="let question of questions">
-        <div>
-            <label class="question-label">{{question.label}}
-            </label>
-        </div>
-        <div class="questions-widget">
-            <ul class="question-section">
-                <li class="questions-li">
-                    <div class="qusetions-li-label">
-                        <div class="qusetions-li-actions">
-                            <div class="order-group">
-                                <div class="order-up order-button" role="button" aria-disabled="false"></div>
-                                <div class="order-down order-button" role="button" aria-disabled="false"></div>
-                            </div>
-                            <div class="question-removeBtn order-button" role="button"></div>
-                        </div>
-                        <div class="title title-lable" title="expand/collapse" role="button"><i class="fa fa-caret-down"></i>
-                     {{question.field.label}}</div>
-                    </div>
-                    <fieldset class="question-fieldset" *ngFor="let field of question.field.fields">
-                        <div class="content">
-                            <div class="field">
-                                <label class="field-name">
-                                    <span class="field-label field-required">{{field.label}}</span>
-                                </label>
-                                <div class="ckeditor"></div>
-                                <div class="error-msg"></div>
-                            </div>
-                            <div class="field correct-answer" *ngIf="field.label == 'Correct'">
-                                <label class="answer-label">
-                                    <input type="checkbox" class="tickmark">{{field.label}}
-                                </label>
-                                <div class="error-msg">
-
+    <app-media></app-media>
+    <!-- <app-ckeditor></app-ckeditor> -->
+    <div>
+        <label class="question-label">Available Options
+        </label>
+    </div>
+    <div *ngFor="let Option of addOptions">
+        <div class="field">
+            <ng-container *ngFor="let question of questions">
+                <div class="questions-widget">
+                    <ul class="question-section">
+                        <li class="questions-li">
+                            <div class="qusetions-li-label">
+                                <div class="qusetions-li-actions">
+                                    <div class="order-group">
+                                        <div class="order-up order-button" role="button" aria-disabled="false"></div>
+                                        <div class="order-down order-button" role="button" aria-disabled="false"></div>
+                                    </div>
+                                    <div class="question-removeBtn order-button" role="button"></div>
+                                </div>
+                                <div class="title title-lable" title="expand/collapse" role="button">
+                                    <i class="fa fa-caret-down"></i>
+                                    {{question.field.label}}
                                 </div>
                             </div>
-                            <ng-container *ngIf="field.label == 'Tips and feedback'">
-                                <fieldset class="field tipsAndFeedback">
-                                    <div class="title tips" title="expand/collapse" role="button">
-                                        {{field.label}}
-                                    </div>
-                                    <div class="content" *ngFor="let tips of field.fields">
+                            <fieldset class="question-fieldset">
+                                <div class="content">
+                                    <ng-container *ngFor="let field of question.field.fields">
+
                                         <div class="field">
-                                            <label class="tip-label">
-                                                <span class="tip-label-text">{{tips.label}}</span>
+                                            <label class="field-name" *ngIf="field.label == 'Text'">
+                                                <span class="field-label field-required">{{field.label}}</span>
                                             </label>
-                                            <div class="tip-label-desc">{{tips.description}}</div>
-                                            <div class="ckeditor"></div>
+                                            <div class="ckeditor" *ngIf="field.label == 'Text'">
+                                                <app-ckeditor></app-ckeditor>
+                                            </div>
                                             <div class="error-msg"></div>
                                         </div>
-                                    </div>
-                                </fieldset>
-                            </ng-container>
-                        </div>
-                    </fieldset>
-                </li>
-                <li></li>
-            </ul>
-        </div>
-        <div class="questions-widget" *ngIf="isaddOption"> 
-                <ul class="question-section">
-                    <li class="questions-li">
-                        <div class="qusetions-li-label">
-                            <div class="qusetions-li-actions">
-                                <div class="order-group">
-                                    <div class="order-up order-button" role="button" aria-disabled="false"></div>
-                                    <div class="order-down order-button" role="button" aria-disabled="false"></div>
-                                </div>
-                                <div class="question-removeBtn order-button" role="button"></div>
-                            </div>
-                            <div class="title title-lable" title="expand/collapse" role="button">
-                         {{question.field.label}}</div>
-                        </div>
-                        <fieldset class="question-fieldset" *ngFor="let field of question.field.fields">
-                            <div class="content">
-                                <div class="field">
-                                    <label class="field-name">
-                                        <span class="field-label field-required">{{field.label}}</span>
-                                    </label>
-                                    <div class="ckeditor"></div>
-                                    <div class="error-msg"></div>
-                                </div>
-                                <div class="field correct-answer" *ngIf="field.label == 'Correct'">
-                                    <label class="answer-label">
-                                        <input type="checkbox" class="tickmark">{{field.label}}
-                                    </label>
-                                    <div class="error-msg">
-    
-                                    </div>
-                                </div>
-                                <ng-container *ngIf="field.label == 'Tips and feedback'">
-                                    <fieldset class="field tipsAndFeedback">
-                                        <div class="title tips" title="expand/collapse" role="button">
-                                            {{field.label}}
-                                        </div>
-                                        <div class="content" *ngFor="let tips of field.fields">
-                                            <div class="field">
-                                                <label class="tip-label">
-                                                    <span class="tip-label-text">{{tips.label}}</span>
-                                                </label>
-                                                <div class="tip-label-desc">{{tips.description}}</div>
-                                                <div class="ckeditor"></div>
-                                                <div class="error-msg"></div>
+                                        <div class="field correct-answer" *ngIf="field.label == 'Correct'">
+                                            <label class="answer-label">
+                                                <input type="checkbox" class="tickmark">{{field.label}}
+                                            </label>
+                                            <div class="error-msg">
+
                                             </div>
                                         </div>
-                                    </fieldset>
-                                </ng-container>
-                            </div>
-                        </fieldset>
-                    </li>
-                    <li></li>
-                </ul>
-            </div>
-        <button (click)="addOption()">Add Option <i class="fa fa-check"></i></button>
+                                        <div *ngIf="field.label == 'Tips and feedback'">
+                                            <fieldset class="field tipsAndFeedback">
+                                                <div class="title tips" title="expand/collapse" role="button">
+                                                    {{field.label}}
+                                                </div>
+                                                <div class="content">
+                                                    <div *ngFor="let tips of field.fields">
+                                                        <div class="field">
+                                                            <label class="tip-label">
+                                                                <span class="tip-label-text">{{tips.label}}</span>
+                                                            </label>
+                                                            <div class="tip-label-desc">{{tips.description}}</div>
+                                                            <div class="ckeditor">
+                                                                <app-ckeditor></app-ckeditor>
+                                                            </div>
+                                                            <div class="error-msg"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+
+                                    </ng-container>
+                                </div>
+                            </fieldset>
+                        </li>
+                        <li></li>
+                    </ul>
+                </div>
+            </ng-container>
+        </div>
     </div>
+    <button class="addoptbtn" (click)="addOption($event)">Add Option</button>
+    <!-- <app-overall-feedback></app-overall-feedback> -->
+    <!-- <app-behaviour-settings></app-behaviour-settings>-->
 </div>
+<!-- <router-outlet (activate)='onActivate($event)'></router-outlet> -->

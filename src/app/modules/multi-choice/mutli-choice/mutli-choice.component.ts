@@ -7,11 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MutliChoiceComponent implements OnInit {
   questions: any = [];
-  isaddOption:boolean = false;
-
+  addOptions:any = [0,1];
+  i : any ;
   constructor() { }
 
   ngOnInit() {
+  
     this.questions = [
       {
         "name": "answers",
@@ -28,65 +29,75 @@ export class MutliChoiceComponent implements OnInit {
           "importance": "high",
           "fields": [
             {
-            "name": "text",
-            "type": "text",
-            "importance": "medium",
-            "widget": "html",
-            "label": "Text",
-            "tags": ["strong", "em", "sub", "sup"]
-          },
-           {
-            "name": "correct",
-            "type": "boolean",
-            "label": "Correct",
-            "importance": "low"
-          },
-          {
-            "name": "tipsAndFeedback",
-            "type": "group",
-            "label": "Tips and feedback",
-            "importance": "low",
-            "optional": true,
-            "fields": [
-              {
-              "name": "tip",
+              "name": "text",
               "type": "text",
+              "importance": "medium",
               "widget": "html",
-              "label": "Tip text",
-              "importance": "low",
-              "description": "Hint for the user. This will appear before user checks his answer\/answers.",
-              "optional": true,
-              "tags": ["p", "br", "strong", "em", "a"]
+              "label": "Text",
+              "tags": ["strong", "em", "sub", "sup"]
             },
-             {
-              "name": "chosenFeedback",
-              "type": "text",
-              "widget": "html",
-              "label": "Message displayed if answer is selected",
-              "importance": "low",
-              "description": "Message will appear below the answer on \"check\" if this answer is selected.",
-              "optional": true,
-              "tags": ["strong", "em", "sub", "sup", "a"]
-            }, 
             {
-              "name": "notChosenFeedback",
-              "type": "text",
-              "widget": "html",
-              "label": "Message displayed if answer is not selected",
+              "name": "correct",
+              "type": "boolean",
+              "label": "Correct",
+              "importance": "low"
+            },
+            {
+              "name": "tipsAndFeedback",
+              "type": "group",
+              "label": "Tips and feedback",
               "importance": "low",
-              "description": "Message will appear below the answer on \"check\" if this answer is not selected.",
               "optional": true,
-              "tags": ["strong", "em", "sub", "sup", "a"]
+              "fields": [
+                {
+                  "name": "tip",
+                  "type": "text",
+                  "widget": "html",
+                  "label": "Tip text",
+                  "importance": "low",
+                  "description": "Hint for the user. This will appear before user checks his answer\/answers.",
+                  "optional": true,
+                  "tags": ["p", "br", "strong", "em", "a"]
+                },
+                {
+                  "name": "chosenFeedback",
+                  "type": "text",
+                  "widget": "html",
+                  "label": "Message displayed if answer is selected",
+                  "importance": "low",
+                  "description": "Message will appear below the answer on \"check\" if this answer is selected.",
+                  "optional": true,
+                  "tags": ["strong", "em", "sub", "sup", "a"]
+                },
+                {
+                  "name": "notChosenFeedback",
+                  "type": "text",
+                  "widget": "html",
+                  "label": "Message displayed if answer is not selected",
+                  "importance": "low",
+                  "description": "Message will appear below the answer on \"check\" if this answer is not selected.",
+                  "optional": true,
+                  "tags": ["strong", "em", "sub", "sup", "a"]
+                }
+              ]
             }
           ]
-          }
-        ]
         }
       }
     ]
   }
-  addOption(){
-    this.isaddOption = true;
+  addOption(event) {
+    debugger
+  this.i = this.addOptions.length;
+  this.addOptions.push(this.i);  
+  }
+
+  expand(ele) {
+    debugger
+  }
+
+  onActivate(e){
+debugger
   }
 
 }

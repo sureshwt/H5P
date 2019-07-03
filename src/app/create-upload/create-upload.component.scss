@@ -1,0 +1,53 @@
+.create-upload-block {
+    display: block;
+
+    .copy-wrap {
+        float: right;
+
+        .copypaste-button {
+            border-color: transparent;
+            font-family: "Open Sans", sans-serif;
+            color: #fff;
+            border: solid 1px transparent;
+            padding: 0 0.75em 0.5em 0.75em;
+            background: transparent;
+            line-height: 1;
+            height: auto;
+            margin-top: 0.5em;
+            margin-right: 0.5em;
+            opacity: 0.3;
+            cursor: auto;
+        }
+    }
+
+    .tab-panel {
+        background-color: #474f5a;
+        list-style: none;
+        border-bottom: none;
+        padding-left: 1em;
+        margin: 0;
+
+        .tab-button {
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            transition: all .5s ease;
+            color: #f3f3f3;
+            outline-color: #1a93f4;
+
+            .tab-button[aria-selected=true] {
+                border-bottom: 3px solid #0a78d1;
+                transition: border-bottom 1s;
+
+            }
+
+            .highlight {
+                display: block;
+                color: #fff;
+                text-decoration: none;
+                padding: .833em;
+            }
+        }
+
+    }
+}

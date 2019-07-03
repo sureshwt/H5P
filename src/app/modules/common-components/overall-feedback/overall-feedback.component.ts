@@ -71,4 +71,16 @@ export class OverallFeedbackComponent implements OnInit {
     ]
   }
 
+  expandfeedBack(){
+    debugger
+    var feedbackBlock = document.getElementById('feedback');
+    console.log(feedbackBlock);
+    if(feedbackBlock.className == 'expand'){
+      feedbackBlock.className = 'content';
+    }else{
+      feedbackBlock.className = 'expand';
+    }
+
+  }
+
 }

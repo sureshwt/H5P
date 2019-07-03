@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +7,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'H5P';
-  isShow:boolean;
+  isShow:boolean = true;
+  contentType:boolean = true;
+ 
   showEditor(){
-    this.isShow = true;
+    this.isShow = false;
+  }
+
+  onActive(){
+    this.contentType = false;
+  }
+
+  data(ev){debugger
+    console.log(ev);
+    
   }
 }
 

@@ -5,14 +5,16 @@ import { BehaviourSettingsComponent } from './behaviour-settings/behaviour-setti
 import { CkeditorComponent } from './ckeditor/ckeditor.component';
 import { OverallFeedbackComponent } from './overall-feedback/overall-feedback.component';
 import { TypeConfirmDialogComponent } from './type-confirm-dialog/type-confirm-dialog.component';
+import { MediaComponent } from './media/media.component';
+
 
 @NgModule({
-  declarations: [TitleComponent, BehaviourSettingsComponent, CkeditorComponent, OverallFeedbackComponent,TypeConfirmDialogComponent],
+  declarations: [TitleComponent, BehaviourSettingsComponent, CkeditorComponent, OverallFeedbackComponent,TypeConfirmDialogComponent, MediaComponent],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports:[
-    TitleComponent
+    TitleComponent, CkeditorComponent,BehaviourSettingsComponent,OverallFeedbackComponent,MediaComponent
   ]
 })
 export class CommonComponentsModule { }

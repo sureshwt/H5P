@@ -17,6 +17,7 @@ const routes: Routes = [
     CommonModule,
     CommonComponentsModule,
     RouterModule.forChild(routes)
-  ]
+  ],
+  exports: [MutliChoiceComponent]
 })
 export class MultiChoiceModule { }

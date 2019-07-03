@@ -1,4 +1,22 @@
- <app-generic-editor></app-generic-editor> 
- <!-- <div class="editor">
+<!-- <app-generic-editor></app-generic-editor>  -->
+<!-- <div class="editor">
 </div> -->
-<router-outlet></router-outlet>
+
+<!-- <li>
+    <a routerLink="/multichoice">Multichoice</a>
+</li> -->
+
+<div class="content-types-block"  *ngIf="contentType">
+                <app-header (item)="data($event)"></app-header>
+                <app-create-upload></app-create-upload>
+                <app-search></app-search>
+                <app-content-types></app-content-types>
+        
+        <!-- <app-mutli-choice></app-mutli-choice>
+        <app-ckeditor></app-ckeditor>
+        <app-behaviour-settings></app-behaviour-settings>
+        <app-overall-feedback></app-overall-feedback> -->
+       
+</div>
+
+<router-outlet (activate)="onActive($event)"></router-outlet>

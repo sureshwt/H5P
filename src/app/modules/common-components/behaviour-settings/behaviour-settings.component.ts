@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BehaviourSettingsComponent implements OnInit {
   beheviouralData: any = [];
+  isActiveHeader :boolean = false;
+  dynamicId: string = 'hello';
   constructor() { }
 
   ngOnInit() {
@@ -135,5 +137,10 @@ export class BehaviourSettingsComponent implements OnInit {
       }
     ]
   }
-
+  
+  expand(event){
+    debugger
+    this.isActiveHeader = true;
+  let ele = document.getElementById('behaviourId');
+  }
 }

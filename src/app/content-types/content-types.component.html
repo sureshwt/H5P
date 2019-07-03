@@ -1,3 +1,38 @@
-<p>
-  content-types works!
-</p>
+<div class="content-type-section">
+  <div class="tab-items">
+    <div class="result-header">All Content Types
+      <span class="result-hits">(44 results)</span>
+    </div>
+    <div id="sort-by" class="sort-by-header">Show:</div>
+    <ul class="sort-by-list" aria-labelledby="sort-by">
+      <li>
+        <a href="#" id="recently" class="highlight" tabindex="-1">Recently Used First</a>
+      </li>
+      <li>
+        <a href="#" id="newest" class="highlight" tabindex="-1">Newest First</a>
+      </li>
+      <li>
+        <a href="#" id="a-to-z" class="highlight" tabindex="0">A to Z</a>
+      </li>
+    </ul>
+  </div>
+  <div class="content-type-list" aria-hidden="false">
+    <ol *ngFor="let type of allType">
+      <a >
+        <li id="h5p-accordion" class="media highlight" tabindex="0" role="button" (click)="onSeletedType(type)">
+          <div>
+            <div class="media-left">
+              <img class="media-object" src="{{type.icon}}" alt="Accordion Icon">
+            </div>
+            <div class="media-body">
+              <div class="h4 media-heading">{{type.title}}</div>
+              <button type="button" class="button primary" tabindex="0" routerLink="/multichoice">Details</button>
+              <div class="content-type-update-info hidden">Update available</div>
+              <div class="description">{{type.summary}}</div>
+            </div>
+          </div>
+        </li>
+      </a>
+    </ol>
+  </div>
+

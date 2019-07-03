@@ -1,0 +1,33 @@
+.header {
+    background-color: #fff;
+    color: #697585;
+    font-style: italic;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    font-family: Open Sans, sans-serif;
+    border: none;
+
+    .header-block {
+        color: #474f5a;
+        padding: .833em 1.55em;
+
+        .logo {
+            // width: 1px;
+            // height: 1px;
+            // overflow: hidden;
+            // display: inline-block;
+            // position: absolute;
+            font-style: normal;
+            font-weight: 400;
+            margin-right: 1em;
+        }
+
+        .select-type {
+            color: #474f5a;
+            font-style: italic;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    }
+}
